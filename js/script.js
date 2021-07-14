@@ -67,13 +67,13 @@ uecloneObj.desc = "This is a clone of UberEats UI replicated with REACT.js."
 //Tech Stacks
 function createList(e) {
     var listView =document.createElement('ol');
-    listView.className = "animated vanishIn " 
-    listView.setAttribute("data-appear-anim-style" , "vanishIn")
+    listView.className = "" 
+ 
 
     for (var i=0; i<e.length; i++)
     {
         var listViewItem= document.createElement('li');
-        listViewItem.classList = `animated vanishIn animDelay0${i*2}`
+      
         listViewItem.appendChild(document.createTextNode(e[i]));
         listView.appendChild(listViewItem);
     }

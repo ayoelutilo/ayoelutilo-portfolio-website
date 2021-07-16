@@ -79,9 +79,9 @@ function createList(e) {
     }
     return listView;
 }
-techStack.appendChild(createList(dsbrndStack));
 
 
+//Handle rotating screen alert for user s o
 if ($(window).width() < 576) { // JS code to call function that would display the rotate screen ion if screen size is smaller
     frame.srcdoc = "<h3 style='color: white; text-align: center;padding: 10px;'>please rotate to landscape mode. </h3><img src='../img/rotate.png' width='120' style='display: flex;justify-content:center;text-align: center;margin: auto;margin-top: 15%;'>"
    
@@ -96,12 +96,16 @@ if ($(window).width() < 576) { // JS code to call function that would display th
 }; 
 const descCont = document.querySelector("#desc");
 if ($(window).width() > 576) { 
+    techStack.replaceChild(createList(dsbrndStack), techStack.childNodes[2]); 
+    techStack.className = "animated puffIn "
+    techStack.setAttribute("data-appear-anim-style" , "puffIn")
 dsbrndButton.addEventListener("click", (function(){    // Event listener
     frame.src =  dsbrndObj.link;
     techStack.replaceChild(createList(dsbrndStack), techStack.childNodes[2]); 
     descCont.innerText = dsbrndObj.desc;
     descCont.className = "animated puffIn " 
     descCont.setAttribute("data-appear-anim-style" , "puffIn")
+ 
     document.querySelector("#dsbrnd").setAttribute('class', 'active');
     document.querySelector('#nova').setAttribute('class', 'inactive');
     document.querySelector("#fb-clone").setAttribute('class', 'inactive');
